@@ -92,14 +92,14 @@ services:
             - "/dev/shm:/dev/shm"
         networks:
             - sail
-    ngrok:
-        image: wernight/ngrok
-        ports:
-            - ${WEB_PORT:-4040}:4040
-        environment:
-        NGROK_AUTH: ${NGROK_AUTH}
-        NGROK_PROTOCOL: http
-        NGROK_PORT: web:80
+    # ngrok:
+    #     image: wernight/ngrok
+    #     ports:
+    #         - ${WEB_PORT:-4040}:4040
+    #     environment:
+    #     NGROK_AUTH: ${NGROK_AUTH}
+    #     NGROK_PROTOCOL: http
+    #     NGROK_PORT: web:80
     # SSLの場合
     # NGROK_PROTOCOL: https
     # NGROK_PORT: web:443
