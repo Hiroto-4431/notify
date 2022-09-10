@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoogleCalendarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin', [GoogleCalendarController::class, 'admin'])->name('admin');
+Route::post('/register', [GoogleCalendarController::class, 'register'])->name('register');
+Route::get('/getTodayEvent', [GoogleCalendarController::class, 'getTodayEvent'])->name('today');
+Route::get('/getTomorrowEvent', [GoogleCalendarController::class, 'getTomorrowEvent'])->name('tomorrow');
+Route::get('/getSpecificEvent', [GoogleCalendarController::class, 'getSpecificEvent'])->name('specific');
